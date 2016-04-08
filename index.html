@@ -52,7 +52,7 @@
 
           <form class="navbar-form navbar-right" role="form">
             <div class="form-group">
-                <input id="search" data-bind="textInput: query, valueUpdate: 'keydown'" autocomplete="off" type="text" class="form-control" placeholder="Search"></input>
+                <input id="search" data-bind="textInput: query, valueUpdate: 'keydown'" autocomplete="off" type="text" class="form-control" placeholder="Search">
             </div>
           </form>
         </div><!--/.navbar-collapse -->
@@ -70,10 +70,10 @@
       </footer>
     </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-        <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
-            async defer></script>
         <script src="js/vendor/bootstrap.min.js"></script>
         <script src="js/vendor/knockout-3.4.0.js"></script>
         <script src="js/main.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+            async defer onerror="googleError()"></script>
     </body>
 </html>
