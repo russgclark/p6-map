@@ -84,11 +84,9 @@ function googleError(){
 function checkMarkers() {
   for (var i = 0; i < markers().length; i++) {
     if(markers()[i].isFlag === true) {
-      //markers()[i].current.setMap(map);
       markers()[i].current.setVisible(true);
     }
     else {
-      //markers()[i].current.setMap(null);
       markers()[i].current.setVisible(false);
     }
   }
@@ -131,7 +129,6 @@ function buildBreweries(brewery) {
         })(brewery[i].current, i));
 
 /* When navigation item is clicked, opens InfoWindow of related marker, causes marker bounce animation, and zooms in and centers map on related marker */
-        //var navItemSearch = brewery[i].current.navItem + i;
         var navItemSearch = $('#brewery' + i);
         navItemSearch.click((function(marker, i) {
           return function() {
@@ -168,9 +165,6 @@ viewModel.markers = ko.dependentObservable(function() {
     });
 }, viewModel);
 
-ko.applyBindings(viewModel);
+viewModel.query.subscribe(checkMarkers);
 
-/* Controls markers display status in response to contents of search field, re-displays all markers when contents of search field are deleted */
-$("#search").keyup(function() {
-  checkMarkers();
-});
+ko.applyBindings(viewModel);
