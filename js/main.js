@@ -20,18 +20,22 @@ function mapBreweryLocations(data) {
   });
 }
 
-/* Requests and returns data from API (request is mocked due to accessibility limitations of API)
-    http://stackoverflow.com/questions/32429776/how-to-process-external-api-json-and-not-jsonp
-    I probably should have researched this API more prior to tying my project to it */
+//$.getJSON("/brewery.php?lat=46.8677308&lng=-96.81083149999999")
+
+
+/* I attempted to set up a php proxy, due to this issue:
+  http://stackoverflow.com/questions/32429776/how-to-process-external-api-json-and-not-jsonp
+  but could not get it to work properly.  I was able to use this proxy method successfully: https://jsonp.afeld.me/
+  The data is now pulled from the API via proxy, instead of from a locally hosted file. */
 function loadBreweryLocations() {
-  var apiUrl = 'http://api.brewerydb.com/v2/locations?ids=Kd6WH6,xjjDoA,wbpj5b,yolHh5,R2I4D5&key=f784656d4d94381b8766d3aef79f3ad3';
-  apiUrl = 'js/api/data.js';
+  //var apiUrl = 'http://api.brewerydb.com/v2/locations?ids=Kd6WH6,xjjDoA,wbpj5b,yolHh5,R2I4D5&key=f784656d4d94381b8766d3aef79f3ad3';
+  var apiUrl = 'https://jsonp.afeld.me/?url=http%3A%2F%2Fapi.brewerydb.com%2Fv2%2Flocations%3Fids%3DKd6WH6%2CxjjDoA%2Cwbpj5b%2CyolHh5%2CR2I4D5%26key%3Df784656d4d94381b8766d3aef79f3ad3'
+  // apiUrl = 'js/api/data.js';
   return $.ajax({
     url: apiUrl,
     dataType: 'json',
     type: 'GET'
       }).then(function(data) {
-        //console.log(data);
           return data;
         }).fail(function(data) {
           alert("Data cannot be loaded from brewerydb.com, please try again later.");
