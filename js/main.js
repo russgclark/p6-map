@@ -20,9 +20,6 @@ function mapBreweryLocations(data) {
   });
 }
 
-//$.getJSON("/brewery.php?lat=46.8677308&lng=-96.81083149999999")
-
-
 /* I attempted to set up a php proxy, due to this issue:
   http://stackoverflow.com/questions/32429776/how-to-process-external-api-json-and-not-jsonp
   but could not get it to work properly.  I was able to use this proxy method successfully: https://jsonp.afeld.me/
