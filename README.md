@@ -3,14 +3,17 @@ A map, list, and details of five breweries within the city of Chicago, IL.
 Pulls name, coordinates, address, and website URL from www.brewerydb.com API.
 
 Instructions:
-
+ - Load live version on my server, here: http://russgclark.com/map/
+ or
  - Load index.html to begin.
  - Click any of the brewery names in the navigation area to jump directly to any specific brewery.
  - Click any map marker to load details of a brewery.
  - Use the search field to limit breweries on map / navigation to those which have names that match or resemble search query.
  - Use the (reset) text link in the upper left corner to reset to the original map zoom level.
  
-Notes:
+# Resolve the following issue via this proxy method: https://jsonp.afeld.me/
+
+Notes (resolved, see above):
 
  - Call to brewerydb.com had to be mocked / data loaded from local file due to
    accessibility limitations of API (doesn't support CORS or JSONP).  The URL within the apiURL variable is a working URL,
