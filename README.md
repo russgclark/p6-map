@@ -11,7 +11,7 @@ Instructions:
  - Use the search field to limit breweries on map / navigation to those which have names that match or resemble search query.
  - Use the (reset) text link in the upper left corner to reset to the original map zoom level.
  
-# Resolve the following issue via this proxy method: https://jsonp.afeld.me/
+# Resolved the issue described below via this proxy method: https://jsonp.afeld.me/
 
 Notes (resolved, see above):
 
